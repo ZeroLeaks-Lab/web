@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All-in-One Leak Test</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <nav>
+      <h1>All-in-One Leak Test</h1>
+      <ul>
+        <li><a href="/dns">{{ s.dns_leak }}</a></li>
+        <li><a href="/webrtc">{{ s.webrtc_leak }}</a></li>
+        <li><a href="/bittorrent">{{ s.bittorrent_leak }}</a></li>
+      </ul>
+    </nav>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

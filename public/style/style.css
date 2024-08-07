@@ -1,0 +1,44 @@
+:root {
+  --width: 1000px;
+  --text-color: #d0d0d0;
+}
+
+html {
+  background-color: #171717;
+  color: var(--text-color);
+  font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+}
+
+nav {
+  display: flex;
+  max-width: var(--width);
+  margin: auto;
+  align-items: center;
+}
+
+nav h1 {
+  flex-grow: 1;
+}
+
+nav ul {
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav a {
+  padding: 20px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  text-align: center;
+  margin-top: 50px;
+}

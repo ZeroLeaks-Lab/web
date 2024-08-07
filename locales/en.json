@@ -1,0 +1,6 @@
+{
+  "dns_leak": "DNS leak",
+  "webrtc_leak": "WebRTC leak",
+  "bittorrent_leak": "BitTorrent leak",
+  "your_ip": "Your IP"
+}
