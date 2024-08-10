@@ -3,8 +3,10 @@
 Install dependencies:
 
 ```
-composer install
+$ composer install
 ```
+
+Copy `src/Config.example.php` to `src/Config.php` and edit as needed.
 
 To run a development PHP server:
 

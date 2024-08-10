@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All-in-One Leak Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
+    <title>All-in-One Leak Test</title>
+    {% block head %}{% endblock %}
 </head>
 <body>
     <nav>
       <h1>All-in-One Leak Test</h1>
       <ul>
-        <li><a href="/dns">{{ s.dns_leak }}</a></li>
-        <li><a href="/webrtc">{{ s.webrtc_leak }}</a></li>
-        <li><a href="/bittorrent">{{ s.bittorrent_leak }}</a></li>
+        <li><a href="/dns">{{ s("dns_leak") }}</a></li>
+        <li><a href="/webrtc">{{ s("webrtc_leak") }}</a></li>
+        <li><a href="/bittorrent">{{ s("bittorrent_leak") }}</a></li>
       </ul>
     </nav>
     <main>

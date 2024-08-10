@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="/style/ip_leak.css">
+{% endblock %}
+
 {% block content %}
-<h1>{{ s.your_ip }}: {{ ip }}</h1>
+<h1>{{ s("your_ip") }}: {{ ip }}</h1>
+<h2>{{ s("country") }}:
+  {% if country is null %}
+    unknown
+  {% else %}
+    {{ l("countries." ~ country) }} <img src="/assets/flags/{{ country }}.svg">
+  {% endif %}
+</h2>
 {% endblock %}

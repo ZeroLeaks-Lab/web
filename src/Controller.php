@@ -1,23 +1,14 @@
 <?php
 
-require_once("Config.php");
-require_once("Lang.php");
+require_once("DB.php");
+require_once("IPLocation.php");
+require_once("View.php");
 
 class Controller {
-  private \Twig\Environment $twig;
-  private Lang $lang;
-
-  function __construct(string $templates_path, Lang $lang) {
-    $this->lang = $lang;
-    $this->twig = new \Twig\Environment(
-      new \Twig\Loader\FilesystemLoader($templates_path),
-    );
-  }
-
-  function ip_leak(): void {
-    $this->twig->display("ip_leak.html", [
-      "s" => $this->lang->strings,
-      "ip" => $_SERVER["REMOTE_ADDR"],
-    ]);
+  static function ip_leak(): void {
+    $iplocation = new IPLocation(DBConnection::new());
+    $ip = $_SERVER["REMOTE_ADDR"];
+    $country = $iplocation->getCountry($ip);
+    (new View())->ip_leak($ip, $country);
   }
 }

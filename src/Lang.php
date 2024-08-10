@@ -1,22 +1,32 @@
 <?php
 
-class Lang {
-  public object $strings;
+require_once("Config.php");
 
-  function __construct() {
-    $langs = $this->get_client_langs();
-    array_push($langs, "en");
-    foreach ($langs as $lang) {
-      $content = file_get_contents("locales/$lang.json");
-      if ($content === false) {
-        continue;
+class Lang {
+  private array $strings;
+  private ?Lang $fallback;
+
+  private function __construct(string $locale) {
+    $dir = "locales/$locale";
+    $content = scandir($dir);
+    if ($content === false) {
+      throw new Exception("Locale not found", 1);
+    }
+    $this->strings = array();
+    foreach ($content as $file) {
+      $path = "$dir/$file";
+      if (is_file($path)) {
+        $this->strings[pathinfo($file, PATHINFO_FILENAME)] = json_decode(file_get_contents($path), true);
       }
-      $this->strings = json_decode($content);
-      break;
+    }
+    if ($locale === \Config\FALLBACK_LOCALE) {
+      $this->fallback = null;
+    } else {
+      $this->fallback = new Lang(\Config\FALLBACK_LOCALE);
     }
   }
 
-  private function get_client_langs(): array {
+  private static function get_client_langs(): array {
     if (!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
         return [];
     }
@@ -30,5 +40,20 @@ class Lang {
         array_push($langs, $lang[0]);
     }
     return $langs;
+  }
+
+  static function getCurrent(): Lang {
+    foreach (Lang::get_client_langs() as $lang) {
+      try {
+        return new Lang($lang);
+      } catch (Exception $_) {}
+    }
+  }
+
+  function getString(string $file, string $key): string {
+    if (key_exists($file, $this->strings) && key_exists($key, $this->strings[$file])) {
+      return $this->strings[$file][$key];
+    }
+    return $this->fallback->getString($file, $key);
   }
 }

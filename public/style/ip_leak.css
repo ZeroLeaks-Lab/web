@@ -1,0 +1,10 @@
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 1em;
+  margin-left: .5em;
+}
