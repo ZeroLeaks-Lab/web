@@ -1,2 +1,6 @@
 /vendor
 /src/Config.php
+/*.csv
+/*.sql
+
+.phpdoc

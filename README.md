@@ -1,5 +1,7 @@
 # All-in-One Leak Test
 
+Requires PHP 8.3 or later.
+
 ## Setup
 
 Install dependencies:
