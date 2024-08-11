@@ -7,8 +7,8 @@ class View {
   private \Twig\Environment $twig;
   private Lang $lang;
 
-  function __construct() {
-    $this->lang = Lang::getCurrent();
+  function __construct(Lang $lang) {
+    $this->lang = $lang;
     $this->twig = new \Twig\Environment(
       new \Twig\Loader\FilesystemLoader(\Config\TEMPLATES_LOCATION),
       [
@@ -29,6 +29,12 @@ class View {
     $this->twig->display("ip_leak.html", [
       "ip" => $ip,
       "country" => $country,
+    ]);
+  }
+
+  function webrtc(): void {
+    $this->twig->display("webrtc.html", [
+      "stun_server" => \Config\STUN_SERVER,
     ]);
   }
 }

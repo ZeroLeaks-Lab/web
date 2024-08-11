@@ -6,9 +6,9 @@
 
 {% block content %}
 <h1>{{ s("your_ip") }}: {{ ip }}</h1>
-<h2>{{ s("country") }}:
+<h2 class="country">{{ s("country") }}:
   {% if country is null %}
-    unknown
+    {{ s("unknown") }}
   {% else %}
     {{ l("countries." ~ country) }} <img src="/assets/flags/{{ country }}.svg">
   {% endif %}

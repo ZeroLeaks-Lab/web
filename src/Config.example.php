@@ -10,6 +10,8 @@ const DB_PASS = "password";
 
 const IP_COUNTRY_TABLE = "ip_country";
 
+const STUN_SERVER = "stun.framasoft.org:3478";
+
 const FALLBACK_LOCALE = "en-US";
 
 const TEMPLATES_LOCATION = "templates";

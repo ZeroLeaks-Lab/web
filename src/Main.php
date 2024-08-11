@@ -2,10 +2,21 @@
 
 require_once("Controller.php");
 
+$lang = Lang::getCurrent();
+$view = new View($lang);
+
 $router = new \Bramus\Router\Router();
 
-$router->get("/", function () {
-  Controller::ip_leak();
+$router->get("/", function () use ($view) {
+  Controller::ip_leak($view);
+});
+
+$router->get("/webrtc", function () use ($view) {
+  $view->webrtc();
+});
+
+$router->get("/api/country/([a-f0-9:.]+)", function ($ip) use ($lang) {
+  Controller::api_ip_country($ip, $lang);
 });
 
 $router->run();

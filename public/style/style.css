@@ -7,13 +7,23 @@ html {
   background-color: #171717;
   color: var(--text-color);
   font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 nav {
   display: flex;
+  width: 100%;
   max-width: var(--width);
-  margin: auto;
   align-items: center;
+  position: absolute;
 }
 
 nav h1 {
@@ -30,15 +40,30 @@ nav li {
 }
 
 nav a {
-  padding: 20px;
   color: var(--text-color);
   text-decoration: none;
+}
+
+nav li a {
+  padding: 20px;
   font-size: 1.2em;
   display: flex;
   align-items: center;
 }
 
 main {
-  text-align: center;
-  margin-top: 50px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.country {
+  display: flex;
+  align-items: center;
+}
+
+.country img {
+  height: 1em;
+  margin-left: .5em;
 }

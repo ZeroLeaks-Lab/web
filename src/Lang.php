@@ -48,6 +48,7 @@ class Lang {
         return new Lang($lang);
       } catch (Exception $_) {}
     }
+    return new Lang(\Config\FALLBACK_LOCALE);
   }
 
   function getString(string $file, string $key): string {
