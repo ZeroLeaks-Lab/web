@@ -8,7 +8,8 @@ const DB_DSN = "mysql:host=localhost;dbname=database;charset=UTF8";
 const DB_USER = "user";
 const DB_PASS = "password";
 
-const IP_COUNTRY_TABLE = "ip_country";
+const IPV4_COUNTRY_TABLE = "ipv4_country";
+const IPV6_COUNTRY_TABLE = "ipv6_country";
 
 /**
  * Path to CSV file containing IP country overrides.
