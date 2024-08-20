@@ -4,11 +4,11 @@ namespace Config;
 /**
  * Data Source Name for database connection.
  */
-const string DB_DSN = "mysql:host=localhost;dbname=database;charset=UTF8";
-const string DB_USER = "user";
-const string DB_PASS = "password";
+const DB_DSN = "mysql:host=localhost;dbname=database;charset=UTF8";
+const DB_USER = "user";
+const DB_PASS = "password";
 
-const string IP_COUNTRY_TABLE = "ip_country";
+const IP_COUNTRY_TABLE = "ip_country";
 
 /**
  * Path to CSV file containing IP country overrides.
@@ -27,11 +27,11 @@ const string IP_COUNTRY_TABLE = "ip_country";
  */
 const IP_COUNTRY_OVERRIDE_FILE = false;
 
-const string STUN_SERVER = "stun.framasoft.org:3478";
+const STUN_SERVER = "stun.framasoft.org:3478";
 
-const string FALLBACK_LOCALE = "en-US";
+const FALLBACK_LOCALE = "en-US";
 
-const string TEMPLATES_LOCATION = "templates";
+const TEMPLATES_LOCATION = "templates";
 
 /**
  * Path to the templates compilation cache directory.
