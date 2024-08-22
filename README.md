@@ -1,4 +1,4 @@
-# All-in-One Leak Test
+# ZeroLeaks Web
 
 Requires PHP 8.3 or later.
 

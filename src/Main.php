@@ -11,6 +11,10 @@ $router->get("/", function () use ($view) {
   Controller::ip_leak($view);
 });
 
+$router->get("/dns", function () use ($view) {
+  $view->dns();
+});
+
 $router->get("/webrtc", function () use ($view) {
   $view->webrtc();
 });

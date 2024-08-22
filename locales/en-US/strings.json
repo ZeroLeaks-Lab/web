@@ -6,5 +6,7 @@
   "country": "Country",
   "unknown": "unknown",
   "webrtc_ip": "WebRTC IP(s)",
-  "webrtc_no_js": "Javascript is disabled. WebRTC cannot be used."
+  "webrtc_no_js": "Javascript is disabled. WebRTC cannot be used.",
+  "dns_no_js": "Javascript is disabled. DNS leak test cannot be performed.",
+  "dns_servers": "DNS Servers"
 }

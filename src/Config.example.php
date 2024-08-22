@@ -4,8 +4,8 @@ namespace Config;
 /**
  * Data Source Name for database connection.
  */
-const DB_DSN = "mysql:host=localhost;dbname=database;charset=UTF8";
-const DB_USER = "user";
+const DB_DSN = "mysql:host=localhost;dbname=zeroleaks;charset=UTF8";
+const DB_USER = "zeroleaks";
 const DB_PASS = "password";
 
 const IPV4_COUNTRY_TABLE = "ipv4_country";
@@ -30,6 +30,8 @@ const IP_COUNTRY_OVERRIDE_FILE = false;
 
 const STUN_SERVER = "stun.framasoft.org:3478";
 
+const HELPER_SERVER_URL = "wss://zeroleaks.org";
+
 const FALLBACK_LOCALE = "en-US";
 
 const TEMPLATES_LOCATION = "templates";
@@ -39,4 +41,4 @@ const TEMPLATES_LOCATION = "templates";
  *
  * Set to false to disable caching.
  */
-const TEMPLATES_CACHE = "/tmp/php/All-in-One Leak Test/templates_cache";
+const TEMPLATES_CACHE = "/tmp/ZeroLeaks/cache/templates";

@@ -1,0 +1,15 @@
+{% extends "results_table.html" %}
+
+{% block head %}
+{{ parent() }}
+<link rel="stylesheet" href="/style/dns.css">
+<script type="text/javascript">
+  const HELPER_URL = "{{ helper_url }}";
+</script>
+<script src="/js/dns.js" defer></script>
+{% endblock %}
+
+{% block content %}
+{{ parent() }}
+<div id="imgs"></div>
+{% endblock %}

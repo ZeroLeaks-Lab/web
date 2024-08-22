@@ -1,27 +1,9 @@
-{% extends "base.html" %}
+{% extends "results_table.html" %}
 
 {% block head %}
-<link rel="stylesheet" href="/style/webrtc.css">
+{{ parent() }}
 <script type="text/javascript">
   const STUN_SERVER = "{{ stun_server }}";
-  const STRINGS = {
-    unknown: "{{ s("unknown") }}",
-  };
 </script>
 <script src="/js/webrtc.js" defer></script>
-{% endblock %}
-
-{% block content %}
-<noscript>{{ s("webrtc_no_js") }}</noscript>
-<span id="loader" style="display: none;"></span>
-<div id="results" style="display: none;">
-  <h1>{{ s("webrtc_ip") }}:</h1>
-  <table>
-    <thead>
-      <th>IP</th>
-      <th>Country</th>
-    </thead>
-    <tbody></tbody>
-  </table>
-</div>
 {% endblock %}

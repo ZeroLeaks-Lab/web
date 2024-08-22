@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/style/results_table.css">
+<script type="text/javascript">
+  const STRINGS = {
+    unknown: "{{ s("unknown") }}",
+  };
+</script>
+<script src="/js/results_table.js" defer></script>
+{% endblock %}
+
+{% block content %}
+<noscript>{{ nojs }}</noscript>
+<span id="loader" style="display: none;"></span>
+<div id="results" style="display: none;">
+  <h1>{{ title }}:</h1>
+  <table>
+    <thead>
+      <th>IP</th>
+      <th>Country</th>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+{% endblock %}
