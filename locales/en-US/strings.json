@@ -1,12 +1,15 @@
 {
-  "dns_leak": "DNS leak",
-  "webrtc_leak": "WebRTC leak",
   "bittorrent_leak": "BitTorrent leak",
-  "your_ip": "Your IP",
   "country": "Country",
+  "dns_leak": "DNS leak",
+  "dns_no_js": "Javascript is disabled. DNS leak test cannot be performed.",
+  "dns_servers": "DNS Servers",
+  "error": "Error",
+  "menu": "Menu",
   "unknown": "unknown",
   "webrtc_ip": "WebRTC IP(s)",
+  "webrtc_leak": "WebRTC leak",
   "webrtc_no_js": "Javascript is disabled. WebRTC cannot be used.",
-  "dns_no_js": "Javascript is disabled. DNS leak test cannot be performed.",
-  "dns_servers": "DNS Servers"
+  "websocket_error": "cannot connect to the websocket server",
+  "your_ip": "Your IP"
 }

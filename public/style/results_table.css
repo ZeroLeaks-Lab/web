@@ -2,9 +2,11 @@
   --secondary: #777;
 }
 
-noscript {
+noscript,
+.error {
   color: red;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  margin: 0 15px;
 }
 
 #loader {

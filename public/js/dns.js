@@ -9,7 +9,7 @@ function addServer(msg) {
   }
 }
 
-let ws = new WebSocket(HELPER_URL + "/v1/dns");
+const ws = new WebSocket(HELPER_URL + "/v1/dns");
 ws.onmessage = (msg) => {
   const params = JSON.parse(msg.data);
   ws.onmessage = addServer;
@@ -20,4 +20,11 @@ ws.onmessage = (msg) => {
     imgs.append(img);
   }
 }
-ws.onerror = (e) => console.error(e);
+ws.onerror = (e) => {
+  console.error(e);
+  const p = document.createElement("p");
+  p.classList.add("error");
+  p.textContent = STRINGS.error + ": " + STRINGS.websocket_error;
+  hideLoader();
+  document.querySelector("main").append(p);
+}

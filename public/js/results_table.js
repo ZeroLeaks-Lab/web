@@ -11,18 +11,18 @@ async function getCountry(ip) {
 }
 
 function createCountryTd(country) {
+  const td = document.createElement("td");
+  td.classList.add("country");
   const p = document.createElement("p");
-  p.classList.add("country");
+  td.append(p);
   if (country === null || country.code === null) {
     p.textContent = STRINGS.unknown;
   } else {
     p.textContent = country.name;
     const flag_img = document.createElement("img");
     flag_img.src = "/assets/flags/" + country.code + ".svg";
-    p.append(flag_img);
+    td.append(flag_img);
   }
-  const td = document.createElement("td");
-  td.append(p);
   return td
 }
 
@@ -38,8 +38,12 @@ function addResult(ip) {
   });
 }
 
-function showResults() {
+function hideLoader() {
   loader.style.display = "none";
+}
+
+function showResults() {
+  hideLoader();
   results.style.removeProperty("display");
 }
 

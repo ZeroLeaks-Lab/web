@@ -5,6 +5,11 @@
 <link rel="stylesheet" href="/style/dns.css">
 <script type="text/javascript">
   const HELPER_URL = "{{ helper_url }}";
+  STRINGS = {
+    ...STRINGS,
+    error: "{{ s("error") }}",
+    websocket_error: "{{ s("websocket_error") }}",
+  };
 </script>
 <script src="/js/dns.js" defer></script>
 {% endblock %}
