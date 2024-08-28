@@ -131,6 +131,7 @@ main {
   flex-direction: column;
   justify-content: center;
   padding: 15px;
+  margin-top: 4em;
 }
 
 .country>* {
