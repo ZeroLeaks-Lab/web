@@ -4,6 +4,10 @@
 {{ parent() }}
 <script type="text/javascript">
   const STUN_SERVER = "{{ stun_server }}";
+  STRINGS = {
+    ...STRINGS,
+    webrtc_error: "{{ s("webrtc_error") }}",
+  };
 </script>
 <script src="/js/webrtc.js" defer></script>
 {% endblock %}

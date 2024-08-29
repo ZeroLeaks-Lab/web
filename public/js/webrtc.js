@@ -13,4 +13,8 @@ function loadIPs() {
   p.createOffer().then((offer) => p.setLocalDescription(offer))
 }
 
-loadIPs();
+if (typeof RTCPeerConnection === "function") {
+  loadIPs();
+} else {
+  showError(STRINGS.webrtc_error);
+}

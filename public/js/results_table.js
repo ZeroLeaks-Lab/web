@@ -42,6 +42,14 @@ function hideLoader() {
   loader.style.display = "none";
 }
 
+function showError(error) {
+  const p = document.createElement("p");
+  p.classList.add("error");
+  p.textContent = STRINGS.error + ": " + error;
+  hideLoader();
+  document.querySelector("main").append(p);
+}
+
 function showResults() {
   hideLoader();
   results.style.removeProperty("display");

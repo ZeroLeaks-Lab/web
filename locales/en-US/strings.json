@@ -7,9 +7,10 @@
   "error": "Error",
   "menu": "Menu",
   "unknown": "unknown",
+  "webrtc_error": "WebRTC is disabled or not supported by your browser.",
   "webrtc_ip": "WebRTC IP(s)",
   "webrtc_leak": "WebRTC leak",
   "webrtc_no_js": "Javascript is disabled. WebRTC cannot be used.",
-  "websocket_error": "cannot connect to the websocket server",
+  "websocket_error": "cannot connect to the websocket server.",
   "your_ip": "Your IP"
 }

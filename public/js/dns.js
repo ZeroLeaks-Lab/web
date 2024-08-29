@@ -15,9 +15,5 @@ ws.onmessage = (msg) => {
 
 ws.onerror = (e) => {
   console.error(e);
-  const p = document.createElement("p");
-  p.classList.add("error");
-  p.textContent = STRINGS.error + ": " + STRINGS.websocket_error;
-  hideLoader();
-  document.querySelector("main").append(p);
+  showError(STRINGS.websocket_error);
 }
