@@ -49,4 +49,12 @@ class View {
       "stun_server" => \Config\STUN_SERVER,
     ]);
   }
+
+  function bittorrent(): void {
+    $this->twig->display("bittorrent.html", [
+      "nojs" => $this->getString("bittorrent_no_js"),
+      "title" => $this->getString("bittorrent_ip"),
+      "helper_url" => \Config\HELPER_SERVER_URL,
+    ]);
+  }
 }

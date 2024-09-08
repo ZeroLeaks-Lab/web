@@ -50,9 +50,13 @@ function showError(error) {
   document.querySelector("main").append(p);
 }
 
-function showResults() {
-  hideLoader();
-  results.style.removeProperty("display");
+function showElement(e) {
+  e.style.removeProperty("display");
 }
 
-loader.style.removeProperty("display");
+function showResults() {
+  hideLoader();
+  showElement(results);
+}
+
+showElement(loader);

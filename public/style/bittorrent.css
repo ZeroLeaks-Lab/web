@@ -1,0 +1,23 @@
+main {
+  gap: 50px;
+}
+
+#magnet a {
+  color: var(--accent);
+}
+
+#magnet span {
+  font-family: monospace;
+  font-size: 1.3em;
+  font-weight: bold;
+  background: #333;
+  padding: 5px;
+  padding-left: .5em;
+  border-radius: 2px;
+}
+
+#expire {
+  margin-top: 30px;
+  font-size: .9em;
+  color: #999;
+}
