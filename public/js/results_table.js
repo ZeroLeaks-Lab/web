@@ -1,6 +1,10 @@
 const loader = document.querySelector("#loader");
 const results = document.querySelector("#results");
 const tbody = document.querySelector("#results tbody");
+const inner = document.getElementById("inner");
+
+let nbResults = 0;
+let error = false;
 
 async function getCountry(ip) {
   const response = await fetch("/api/country/" + ip);
@@ -34,29 +38,44 @@ function addResult(ip) {
     tr.append(ip_td);
     tr.append(createCountryTd(country));
     tbody.append(tr);
-    showResults();
+    if (nbResults++ == 0) {
+      showResults();
+    }
   });
 }
 
 function hideLoader() {
-  loader.style.display = "none";
-}
-
-function showError(error) {
-  const p = document.createElement("p");
-  p.classList.add("error");
-  p.textContent = STRINGS.error + ": " + error;
-  hideLoader();
-  document.querySelector("main").append(p);
+  loader.classList.add("hidden");
 }
 
 function showElement(e) {
-  e.style.removeProperty("display");
+  e.classList.remove("hidden");
 }
 
 function showResults() {
   hideLoader();
   showElement(results);
+}
+
+function showError(error) {
+  const p = document.querySelector("p.error");
+  p.textContent = STRINGS.error + ": " + error;
+  hideLoader();
+  showElement(p);
+  inner.classList.add("hidden");
+}
+
+function handleWebsocket(ws) {
+  ws.onerror = (e) => {
+    console.error(e);
+    error = true;
+    showError(STRINGS.websocket_error);
+  }
+  ws.onclose = () => {
+    if (nbResults == 0 && !error) {
+      showError(STRINGS.websocket_closed);
+    }
+  };
 }
 
 showElement(loader);

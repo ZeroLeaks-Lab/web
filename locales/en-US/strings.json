@@ -16,6 +16,7 @@
   "webrtc_ip": "WebRTC IP(s)",
   "webrtc_leak": "WebRTC leak",
   "webrtc_no_js": "Javascript is disabled. WebRTC cannot be used.",
+  "websocket_closed": "websocket connection closed.",
   "websocket_error": "cannot connect to the websocket server.",
   "your_ip": "Your IP"
 }

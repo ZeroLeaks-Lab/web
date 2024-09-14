@@ -4,15 +4,12 @@ function hexEncode(byteArray) {
   }).join('');
 }
 
-var magnetLink;
-
 const ws = new WebSocket(HELPER_URL + "/v1/bittorrent")
-const magnetContainer = document.getElementById("magnet");
 
 ws.onmessage = (msg) => {
-  magnetLink = msg.data;
   ws.onmessage = (msg) => addResult(msg.data);
-  const a = magnetContainer.querySelector("a");
+  const a = inner.querySelector("a");
+  const magnetLink = msg.data;
   a.href = magnetLink;
   a.textContent = magnetLink;
   const selection = window.getSelection();
@@ -20,11 +17,8 @@ ws.onmessage = (msg) => {
   range.selectNodeContents(a);
   selection.removeAllRanges();
   selection.addRange(range);
-  showElement(magnetContainer);
+  showElement(inner);
   hideLoader();
 }
 
-ws.onerror = (e) => {
-  console.error(e);
-  showError(STRINGS.websocket_error);
-}
+handleWebsocket(ws);

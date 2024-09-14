@@ -6,6 +6,8 @@
   let STRINGS = {
     error: "{{ s("error") }}",
     unknown: "{{ s("unknown") }}",
+    websocket_error: "{{ s("websocket_error") }}",
+    websocket_closed: "{{ s("websocket_closed") }}",
   };
 </script>
 <script src="/js/results_table.js" defer></script>
@@ -13,8 +15,8 @@
 
 {% block content %}
 <noscript>{{ nojs }}</noscript>
-<span id="loader" style="display: none;"></span>
-<div id="results" style="display: none;">
+<span id="loader" class="hidden"></span>
+<div id="results" class="hidden">
   <h1>{{ title }}:</h1>
   <table>
     <thead>
@@ -24,4 +26,6 @@
     <tbody></tbody>
   </table>
 </div>
+{% block inner %}{% endblock %}
+<p class="error" class="hidden"></p>
 {% endblock %}

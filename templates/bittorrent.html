@@ -5,17 +5,12 @@
 <link rel="stylesheet" href="/style/bittorrent.css">
 <script type="text/javascript">
   const HELPER_URL = "{{ helper_url }}";
-  STRINGS = {
-    ...STRINGS,
-    websocket_error: "{{ s("websocket_error") }}",
-  };
 </script>
 <script src="/js/bittorrent.js" defer></script>
 {% endblock %}
 
-{% block content %}
-{{ parent() }}
-<div id="magnet" style="display: none">
+{% block inner %}
+<div id="inner" class="hidden">
   <p>{{ s("magnet_instructions") }}</p>
   <p>🧲 <a></a></p>
   <p>{{ s("copy_hint")|format("<span>⌨️ Ctrl+C</span>")|raw }}</p>

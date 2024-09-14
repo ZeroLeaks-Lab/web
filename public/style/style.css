@@ -144,3 +144,7 @@ main {
   height: 1em;
   margin-left: .4em;
 }
+
+.hidden {
+  display: none !important;
+}
