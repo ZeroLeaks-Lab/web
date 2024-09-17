@@ -62,7 +62,9 @@ function showError(error) {
   p.textContent = STRINGS.error + ": " + error;
   hideLoader();
   showElement(p);
-  inner.classList.add("hidden");
+  if (nbResults == 0) {
+    inner.classList.add("hidden");
+  }
 }
 
 function handleWebsocket(ws) {

@@ -4,6 +4,7 @@ main {
 
 #inner a {
   color: var(--accent);
+  word-break: break-all;
 }
 
 #inner span {
