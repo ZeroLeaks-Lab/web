@@ -1,12 +1,12 @@
 :root {
   --width: 1000px;
   --text-color: #d0d0d0;
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
 
 html {
   background-color: #171717;
   color: var(--text-color);
-  font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
   height: 100%;
 }
 
