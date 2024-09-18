@@ -1,5 +1,4 @@
 const loader = document.querySelector("#loader");
-const results = document.querySelector("#results");
 const tbody = document.querySelector("#results tbody");
 const inner = document.getElementById("inner");
 
@@ -39,7 +38,12 @@ function addResult(ip) {
     tr.append(createCountryTd(country));
     tbody.append(tr);
     if (nbResults++ == 0) {
-      showResults();
+      hideLoader();
+      showElement(document.querySelector("#results"));
+      const refresh = document.querySelector("button.refresh");
+      if (refresh !== null) {
+        showElement(refresh);
+      }
     }
   });
 }
@@ -50,11 +54,6 @@ function hideLoader() {
 
 function showElement(e) {
   e.classList.remove("hidden");
-}
-
-function showResults() {
-  hideLoader();
-  showElement(results);
 }
 
 function showError(error) {

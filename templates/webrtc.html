@@ -11,3 +11,7 @@
 </script>
 <script src="/js/webrtc.js" defer></script>
 {% endblock %}
+
+{% block inner %}
+{{ include("refresh_button.html", {hidden: true}) }}
+{% endblock %}

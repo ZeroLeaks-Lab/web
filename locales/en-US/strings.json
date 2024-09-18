@@ -11,6 +11,7 @@
   "magnet_expire": "The link will expire if not used within a certain period of time.",
   "magnet_instructions": "To see your BitTorrent IP, add the following magnet link to your BitTorrent client:",
   "menu": "Menu",
+  "refresh": "Refresh",
   "unknown": "unknown",
   "webrtc_error": "WebRTC is disabled or not supported by your browser.",
   "webrtc_ip": "WebRTC IP(s)",
