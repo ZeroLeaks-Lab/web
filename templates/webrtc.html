@@ -14,4 +14,6 @@
 
 {% block inner %}
 {{ include("refresh_button.html", {hidden: true}) }}
+<p class="explanation">{{ s("explanation_webrtc") }}</p>
+<p class="explanation">{{ s("disable_webrtc")|format("<code>media.peerconnection.enabled</code>", "<code>false</code>", "<a href=\"https://support.mozilla.org/en-US/kb/about-config-editor-firefox\">about:config</a>")|raw}}</p>
 {% endblock %}

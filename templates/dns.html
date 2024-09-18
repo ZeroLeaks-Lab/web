@@ -11,5 +11,6 @@
 
 {% block inner %}
 {{ include("refresh_button.html", {hidden: true}) }}
+<p class="explanation">{{ s("explanation_dns") }}</p>
 <div id="inner" class="hidden"></div>
 {% endblock %}

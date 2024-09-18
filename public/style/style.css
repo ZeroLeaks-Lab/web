@@ -136,18 +136,17 @@ main {
   transform: translateY(-2em);
 }
 
+a {
+  color: #0097ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 footer {
   padding: 10px 0;
-}
-
-footer a,
-footer a:visited {
-  text-decoration: none;
-  color: #0097ff;
-}
-
-footer a:hover {
-  text-decoration: underline;
 }
 
 .country>* {
@@ -172,4 +171,17 @@ button.refresh {
   cursor: pointer;
   padding: 10px 15px;
   margin-top: 20px;
+}
+
+p.explanation {
+  max-width: calc(var(--width) - 80px);
+  font-size: .9em;
+  color: #999;
+}
+
+code {
+  font-size: 1.2em;
+  background-color: #222;
+  padding: 3px 5px;
+  border-radius: 5px;
 }
