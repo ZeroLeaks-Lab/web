@@ -1,5 +1,6 @@
 :root {
   --width: 1000px;
+  --accent: red;
   --text-color: #d0d0d0;
   font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
@@ -133,6 +134,20 @@ main {
   justify-content: center;
   padding: 15px;
   transform: translateY(-2em);
+}
+
+footer {
+  padding: 10px 0;
+}
+
+footer a,
+footer a:visited {
+  text-decoration: none;
+  color: #0097ff;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 .country>* {

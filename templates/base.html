@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/fonts/inter.css">
     <link rel="stylesheet" href="/style/style.css">
     <title>ZeroLeaks</title>
     {% block head %}{% endblock %}
-</head>
-<body>
+  </head>
+  <body>
     <nav>
       <h1><a href="/">ZeroLeaks</a></h1>
       <div id="links">
@@ -24,5 +24,8 @@
     <main>
       {% block content %}{% endblock %}
     </main>
-</body>
+    <footer>
+      <p>{{ s("footer") }} - <a href="https://github.com/ZeroLeaks-Lab/web">{{ s("source_code") }}</a></p>
+    </footer>
+  </body>
 </html>
