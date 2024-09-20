@@ -32,6 +32,13 @@ const STUN_SERVER = "stun.framasoft.org:3478";
 
 const HELPER_SERVER_URL = "wss://zeroleaks.org";
 
+/**
+ * Maximum number of records in the IP history.
+ *
+ * Set to -1 to disable, 0 for infinite.
+ */
+const IP_HISTORY_MAX_SIZE = 10;
+
 const FALLBACK_LOCALE = "en-US";
 
 const TEMPLATES_LOCATION = "templates";

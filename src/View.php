@@ -31,6 +31,7 @@ class View {
     $this->twig->display("ip_leak.html", [
       "ip" => $ip,
       "country" => $country,
+      "history_size" => \Config\IP_HISTORY_MAX_SIZE,
     ]);
   }
 
@@ -39,6 +40,7 @@ class View {
       "nojs" => $this->getString("dns_no_js"),
       "title" => $this->getString("dns_servers"),
       "helper_url" => \Config\HELPER_SERVER_URL,
+      "history_size" => -1,
     ]);
   }
 
@@ -47,6 +49,7 @@ class View {
       "nojs" => $this->getString("webrtc_no_js"),
       "title" => $this->getString("webrtc_ip"),
       "stun_server" => \Config\STUN_SERVER,
+      "history_size" => \Config\IP_HISTORY_MAX_SIZE,
     ]);
   }
 
@@ -55,6 +58,7 @@ class View {
       "nojs" => $this->getString("bittorrent_no_js"),
       "title" => $this->getString("bittorrent_ip"),
       "helper_url" => \Config\HELPER_SERVER_URL,
+      "history_size" => \Config\IP_HISTORY_MAX_SIZE,
     ]);
   }
 }

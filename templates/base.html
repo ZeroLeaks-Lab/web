@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="/style/style.css">
     <title>ZeroLeaks</title>
     <script src="/js/utils.js" defer></script>
-    {% if history ?? true %}
+    {% if history_size >= 0 %}
+    <script>
+      const HISTORY_MAX_SIZE = {{history_size}};
+    </script>
     <script src="/js/history.js" defer></script>
     {% endif %}
     {% block head %}{% endblock %}
@@ -27,7 +30,7 @@
     </nav>
     <main>
       {% block content %}{% endblock %}
-      {% if history ?? true %}
+      {% if history_size >= 0 %}
       <div id="history" class="hidden">
         <div class="title">
           <h3>{{ s("history_title") }}:</h3>

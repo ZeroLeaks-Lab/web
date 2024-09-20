@@ -8,11 +8,13 @@
 
 {% block head %}
 <link rel="stylesheet" href="/style/ip_leak.css">
+{% if history_size >= 0 %}
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     ipHistory.add("{{ ip }}", {name: "{{ country_name }}", code: "{{ country }}"});
   });
 </script>
+{% endif %}
 {% endblock %}
 
 {% block content %}

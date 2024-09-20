@@ -33,6 +33,12 @@ class History {
       return;
     }
     this.history.push([ip, country, Date.now()]);
+    if (HISTORY_MAX_SIZE != 0) {
+      const e = this.history.length - HISTORY_MAX_SIZE;
+      for (let i = 0; i < e; ++i) {
+        this.history.shift();
+      }
+    }
     this.#save();
     this.display();
   }
