@@ -2,6 +2,7 @@
   --width: 1000px;
   --accent: red;
   --text-color: #d0d0d0;
+  --secondary: #777;
   font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
 }
 
@@ -133,7 +134,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 15px;
-  transform: translateY(-2em);
+  transform: translateY(-1em);
 }
 
 a {
@@ -147,6 +148,21 @@ a:hover {
 
 footer {
   padding: 10px 0;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table td,
+table th {
+  border: 1px solid var(--secondary);
+  padding: 15px;
+}
+
+table p {
+  margin: 0;
 }
 
 .country>* {
@@ -184,4 +200,27 @@ code {
   background-color: #222;
   padding: 3px 5px;
   border-radius: 5px;
+}
+
+#history {
+  margin-top: 40px;
+}
+
+#history .title {
+  display: flex;
+}
+
+#history .title h3 {
+  text-align: left;
+  flex-grow: 1;
+}
+
+#history button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#history img {
+  width: 20px;
 }

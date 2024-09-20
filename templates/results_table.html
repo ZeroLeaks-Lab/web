@@ -2,7 +2,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="/style/results_table.css">
-<script type="text/javascript">
+<script>
   let STRINGS = {
     error: "{{ s("error") }}",
     unknown: "{{ s("unknown") }}",
@@ -20,12 +20,14 @@
   <h1>{{ title }}:</h1>
   <table>
     <thead>
-      <th>IP</th>
-      <th>Country</th>
+      <tr>
+        <th>{{ s("ip") }}</th>
+        <th>{{ s("country") }}</th>
+      </tr>
     </thead>
     <tbody></tbody>
   </table>
 </div>
-<p class="error" class="hidden"></p>
+<p class="error hidden"></p>
 {% block inner %}{% endblock %}
 {% endblock %}

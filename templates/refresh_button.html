@@ -1,5 +1,5 @@
 <button class="refresh {% if hidden ?? false %} hidden {% endif %}" onclick="reload()">{{ s("refresh") }}</button>
-<script type="text/javascript">
+<script>
   function reload() {
     window.location.href = window.location.href;
     window.location.reload();

@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="/assets/fonts/inter.css">
     <link rel="stylesheet" href="/style/style.css">
     <title>ZeroLeaks</title>
+    <script src="/js/utils.js" defer></script>
+    {% if history ?? true %}
+    <script src="/js/history.js" defer></script>
+    {% endif %}
     {% block head %}{% endblock %}
   </head>
   <body>
@@ -13,7 +17,7 @@
       <h1><a href="/">ZeroLeaks</a></h1>
       <div id="links">
         <input id="checkbox" type="checkbox">
-        <label for="checkbox"><img src="/assets/menu.svg" alt="{{ s("menu") }}"></label>
+        <label for="checkbox"><img src="/assets/icons/menu.svg" alt="{{ s("menu") }}"></label>
         <ul>
           <li><a href="/dns">{{ s("dns_leak") }}</a></li>
           <li><a href="/webrtc">{{ s("webrtc_leak") }}</a></li>
@@ -23,6 +27,24 @@
     </nav>
     <main>
       {% block content %}{% endblock %}
+      {% if history ?? true %}
+      <div id="history" class="hidden">
+        <div class="title">
+          <h3>{{ s("history_title") }}:</h3>
+          <button><img src="/assets/icons/trash.svg" alt="{{ s("delete") }}"></button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>{{ s("ip") }}</th>
+              <th>{{ s("country") }}</th>
+              <th>{{ s("date") }}</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      {% endif %}
     </main>
     <footer>
       <p>{{ s("footer") }} - <a href="https://github.com/ZeroLeaks-Lab/web">{{ s("source_code") }}</a></p>
