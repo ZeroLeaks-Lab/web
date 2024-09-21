@@ -8,6 +8,9 @@ const DB_DSN = "mysql:host=localhost;dbname=zeroleaks;charset=UTF8";
 const DB_USER = "zeroleaks";
 const DB_PASS = "password";
 
+/**
+ * Names of GeoLite2 IP country tables in the database.
+ */
 const IPV4_COUNTRY_TABLE = "ipv4_country";
 const IPV6_COUNTRY_TABLE = "ipv6_country";
 
@@ -28,8 +31,14 @@ const IPV6_COUNTRY_TABLE = "ipv6_country";
  */
 const IP_COUNTRY_OVERRIDE_FILE = false;
 
+/**
+ * STUN server used for WebRTC leak test.
+ */
 const STUN_SERVER = "stun.framasoft.org:3478";
 
+/**
+ * URL of the ZeroLeaks helper websocket server.
+ */
 const HELPER_SERVER_URL = "wss://zeroleaks.org";
 
 /**
@@ -39,8 +48,16 @@ const HELPER_SERVER_URL = "wss://zeroleaks.org";
  */
 const IP_HISTORY_MAX_SIZE = 10;
 
+/**
+ * Default locale to use if that of the client cannot
+ * be determined.
+ */
 const FALLBACK_LOCALE = "en-US";
 
+/**
+ * Path to the HTML templates to use, relative to the root of the
+ * source repository.
+ */
 const TEMPLATES_LOCATION = "templates";
 
 /**
