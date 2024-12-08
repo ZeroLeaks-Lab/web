@@ -43,11 +43,11 @@ grant all privileges on zeroleaks.* to 'zeroleaks'@'localhost';
 EOF
 ```
 
-Once the database is setup, download the IPv4 and IPv6 GeoLite2 country databases from [https://github.com/sapics/ip-location-db](https://github.com/sapics/ip-location-db), then run the `update_ip_db.py` script to generate the corresponding SQL files:
+Once the database is setup, download the IPv4-num and IPv6-num GeoLite2 country databases from [https://github.com/sapics/ip-location-db](https://github.com/sapics/ip-location-db), then run the `update_ip_db.py` script to generate the corresponding SQL files:
 
 ```
-$ python3 update_ip_db.py geolite2-country-ipv4.csv ipv4.sql
-$ python3 update_ip_db.py geolite2-country-ipv6.csv ipv6.sql
+$ python3 update_ip_db.py geolite2-country-ipv4-num.csv ipv4.sql
+$ python3 update_ip_db.py geolite2-country-ipv6-num.csv ipv6.sql
 ```
 
 These SQL files now need to be imported into the database. For example:

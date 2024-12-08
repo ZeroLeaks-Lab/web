@@ -41,8 +41,9 @@ class IPLocation {
     } else {
       throw new Exception("Invalid IP:" . $ip);
     }
-    $stmt = $this->pdo->prepare("SELECT country FROM " . $table . " WHERE :ip BETWEEN start AND end");
-    $stmt->execute([":ip" => $ip]);
+    $ipNum = "0x".bin2hex(inet_pton($ip));
+    $stmt = $this->pdo->prepare("SELECT country FROM $table WHERE $ipNum BETWEEN start AND end");
+    $stmt->execute();
     if ($stmt->rowCount() === 0) {
       return null;
     }

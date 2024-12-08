@@ -17,10 +17,10 @@ class SQLFile:
         addr = ipaddress.ip_address(ip)
         if isinstance(addr, ipaddress.IPv4Address):
             table = IPV4_TABLE_NAME
-            data_type = "INET4"
+            data_type = "BINARY(4)"
         elif isinstance(addr, ipaddress.IPv6Address):
             table = IPV6_TABLE_NAME
-            data_type = "INET6"
+            data_type = "BINARY(16)"
         else:
             raise ValueError("Unknown IP type: "+addr)
         if self._erase:
@@ -30,12 +30,12 @@ class SQLFile:
 INSERT INTO {table} VALUES\n""")
         self._initialized = True
 
-    def add_range(self, start, end, country):
+    def add_range(self, start: int, end: int, country: str):
         if self._initialized:
             self._file.write(",\n")
         else:
             self._init(start)
-        self._file.write(f"('{start}','{end}','{country}')")
+        self._file.write(f"({hex(start)},{hex(end)},'{country}')")
 
     def finalize(self):
         self._file.write(";\n")
@@ -47,12 +47,12 @@ def update_db(input, output, erase: bool):
         reader = csv.reader(f)
         for row in reader:
             start, end, country = row
-            sqlfile.add_range(start, end, country)
+            sqlfile.add_range(int(start), int(end), country)
         sqlfile.finalize()
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("input", help="GeoLite2 IP country CSV file")
+    parser.add_argument("input", help="GeoLite2 IP-num country CSV file")
     parser.add_argument("output", help="SQL file name")
     parser.add_argument("--erase", help="Clear the table before adding new IPs", action="store_true")
     args = parser.parse_args()
